@@ -1,9 +1,9 @@
 package com.java27.blog.service;
 
-import com.java27.blog.config.AuthenticationResponse;
-import com.java27.blog.config.LoginRequest;
-import com.java27.blog.config.RegisterRequest;
-import com.java27.blog.config.utils.UserMapper;
+import com.java27.blog.dto.AuthenticationResponse;
+import com.java27.blog.dto.LoginRequest;
+import com.java27.blog.dto.RegisterRequest;
+import com.java27.blog.mapper.UserMapper;
 import com.java27.blog.dto.UserDTO;
 import com.java27.blog.entity.User;
 import com.java27.blog.repository.UserRepository;

@@ -1,4 +1,4 @@
-package com.java27.blog.config;
+package com.java27.blog.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

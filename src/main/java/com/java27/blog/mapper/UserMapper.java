@@ -1,6 +1,6 @@
-package com.java27.blog.config.utils;
+package com.java27.blog.mapper;
 
-import com.java27.blog.config.RegisterRequest;
+import com.java27.blog.dto.RegisterRequest;
 import com.java27.blog.dto.UserDTO;
 import com.java27.blog.entity.User;
 import com.java27.blog.model.TypeUser;

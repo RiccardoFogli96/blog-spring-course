@@ -1,4 +1,4 @@
-package com.java27.blog.config;
+package com.java27.blog.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,13 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class RegisterRequest {
-
-    private String name;
-    private String surname;
+@NoArgsConstructor
+@Builder
+public class LoginRequest {
     private String email;
     private String password;
 }

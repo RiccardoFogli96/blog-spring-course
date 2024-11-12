@@ -1,8 +1,8 @@
 package com.java27.blog.controller;
 
-import com.java27.blog.config.AuthenticationResponse;
-import com.java27.blog.config.LoginRequest;
-import com.java27.blog.config.RegisterRequest;
+import com.java27.blog.dto.AuthenticationResponse;
+import com.java27.blog.dto.LoginRequest;
+import com.java27.blog.dto.RegisterRequest;
 import com.java27.blog.dto.UserDTO;
 import com.java27.blog.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
