@@ -3,8 +3,9 @@ package com.java27.blog.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.Instant;
 
 @Entity
 @AllArgsConstructor
@@ -20,7 +21,7 @@ public class Post {
     @Column
     private String content;
     @Column
-    private Data createAt;
+    private Instant createAt;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
