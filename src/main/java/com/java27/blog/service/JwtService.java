@@ -21,9 +21,9 @@ public class JwtService {
 	/**
 	 * La chiave segreta a 256bit utilizzata per firmare il token
 	 */
-	@Value("${application.security.jwt.secret-key}")
+	@Value("${jwt.secret-key}")
 	private String secretKey;
-	@Value("${application.security.jwt.expiration}")
+	@Value("${jwt.expiration.minutes}")
 	private long jwtExpiration;
 
 	/**
@@ -73,7 +73,7 @@ public class JwtService {
 				.setClaims(extraClaims)
 				.setSubject(userDetails.getUsername())
 				.setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis() + jwtExpiration))
+				.setExpiration(new Date(System.currentTimeMillis() + jwtExpiration * 60 * 1000))
 				.signWith(getSigningKey(), SignatureAlgorithm.HS256)
 				.compact();
 	}
