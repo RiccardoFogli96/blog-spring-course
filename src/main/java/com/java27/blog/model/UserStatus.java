@@ -1,5 +1,6 @@
 package com.java27.blog.model;
 
 public enum UserStatus {
-    ACTIVE
+    ACTIVE,
+    IN_PENDING
 }
