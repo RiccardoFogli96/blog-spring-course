@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
@@ -23,6 +24,8 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
+    private String uuid;
     @Column
     private String name;
     @Column
@@ -54,6 +57,11 @@ public class User implements UserDetails {
     @Override
     public String getPassword(){
         return password;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return userStatus.equals(UserStatus.ACTIVE);
     }
 
 }
