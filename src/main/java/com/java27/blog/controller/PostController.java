@@ -17,7 +17,7 @@ public class PostController {
 
     private final PostService postService;
 
-    @PostMapping
+    @PostMapping("/user/post")
     public ResponseEntity<PostDTO> addNewPost (@AuthenticationPrincipal UserDetails userDetails, @RequestBody CreatePostDTO createPostDTO){
         return ResponseEntity.ok(postService.addNewPost(userDetails, createPostDTO));
     }

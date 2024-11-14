@@ -1,12 +1,14 @@
 package com.java27.blog.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.Instant;
 
 @Setter
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CreatePostDTO {
 
     private String title;
