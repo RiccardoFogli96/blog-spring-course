@@ -9,6 +9,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -17,8 +18,9 @@ public class PostController {
 
     private final PostService postService;
 
-    @PostMapping("/user/post")
-    public ResponseEntity<PostDTO> addNewPost (@AuthenticationPrincipal UserDetails userDetails, @RequestBody CreatePostDTO createPostDTO){
+    @PostMapping("/post")
+    public ResponseEntity<PostDTO> addNewPost (@AuthenticationPrincipal UserDetails userDetails, @RequestBody CreatePostDTO createPostDTO) throws Exception {
         return ResponseEntity.ok(postService.addNewPost(userDetails, createPostDTO));
     }
+
 }
