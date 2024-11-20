@@ -12,9 +12,7 @@ import com.java27.blog.utils.RoleUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -32,9 +30,11 @@ public class PostService {
 
         Post newPost = postMapper.toPost(createPostDTO, userAuth);
 
+        newPost.setAuthor(userAuth);
+
         postRepository.save(newPost);
 
-        return postMapper.toPostDTO(newPost);
+        return postMapper.toDTO(newPost);
     }
 
 }

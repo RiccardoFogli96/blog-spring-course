@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -27,4 +28,7 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User author;
+
+    @OneToMany(mappedBy = "post")
+    private List<Comment> comments;
 }

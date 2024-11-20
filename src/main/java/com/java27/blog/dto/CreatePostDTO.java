@@ -6,9 +6,9 @@ import java.time.Instant;
 
 @Setter
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class CreatePostDTO {
 
     private String title;

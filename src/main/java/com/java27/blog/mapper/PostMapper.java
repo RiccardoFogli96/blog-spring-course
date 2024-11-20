@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PostMapper {
 
-    public Post toPost (CreatePostDTO createPostDTO, User user){
+    public Post toPost(CreatePostDTO createPostDTO, User user){
         return Post.builder()
                 .author(user)
                 .title(createPostDTO.getTitle())
@@ -18,12 +18,11 @@ public class PostMapper {
                 .build();
     }
 
-    public PostDTO toPostDTO (Post post){
+    public PostDTO toDTO(Post post){
         return PostDTO.builder()
                 .title(post.getTitle())
                 .content(post.getContent())
                 .createAt(post.getCreateAt())
                 .build();
-
     }
 }
