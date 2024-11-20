@@ -11,6 +11,7 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.List;
 import java.util.UUID;
 
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, imports = {TypeUser.class, UserStatus.class, UUID.class})
@@ -19,6 +20,7 @@ public abstract class UserMapper {
     @Autowired
     public PasswordEncoder passwordEncoder;
     public abstract UserDTO userDTO(User user);
+    public abstract List<UserDTO> userDTOList(List<User> userList);
 
     @Mapping(target = "typeUser", expression = "java(TypeUser.USER)")
     @Mapping(target = "userStatus", expression = "java(UserStatus.IN_PENDING)")

@@ -1,3 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/cine_box?useSSL=false&serverTimezone=UTC
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: 'true'
+        use_sql_comments: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: 'true'
+  application:
+    name: blog-post
+
+jwt:
+  expiration:
+    minutes: 10
+  secret-key: cf0e0500f818df14ba9121585cae3bc9653bd0f3543b5c67d3f218babdb703e7
+---
 environment: test
 spring:
   datasource:
