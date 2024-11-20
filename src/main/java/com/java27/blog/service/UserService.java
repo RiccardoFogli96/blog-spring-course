@@ -22,4 +22,8 @@ public class UserService {
         Page<User> userPage = userRepository.findAll(pageable);
         return userPage.map(userMapper::userDTO);
     }
+
+    public User getUserByEmail(String username) throws Exception{
+        return userRepository.findByEmail(username).orElseThrow(() -> new Exception ("No user with email " + username));
+    }
 }

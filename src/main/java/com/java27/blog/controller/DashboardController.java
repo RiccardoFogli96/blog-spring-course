@@ -10,6 +10,6 @@ import java.util.List;
 @RestController
 public class DashboardController {
 
-    @GetMapping
-    public List<UserDTO>
+   /* @GetMapping
+    public List<UserDTO>*/
 }

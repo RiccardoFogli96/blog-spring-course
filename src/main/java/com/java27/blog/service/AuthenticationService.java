@@ -34,7 +34,7 @@ public class AuthenticationService {
     public UserDTO registerUser(RegisterRequest request) throws IOException {
         User user = userMapper.toUserFromRegisterRequest(request);
         userRepository.save(user);
-        emailService.sendEmail(user.getEmail(), link + "?token=" + user.getUuid());
+      //  emailService.sendMail(user.getEmail(), link + "?token=" + user.getUuid());
         return userMapper.userDTO(user);
     }
 

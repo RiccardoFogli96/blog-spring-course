@@ -44,6 +44,9 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "author")
     private List<Post> posts;
 
+    @OneToMany(mappedBy = "user")
+    private List<Comment> comments;
+
     @Override
     public Collection < ? extends GrantedAuthority > getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority(typeUser.name()));

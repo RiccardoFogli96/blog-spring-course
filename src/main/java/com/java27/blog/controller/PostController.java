@@ -1,6 +1,6 @@
 package com.java27.blog.controller;
 
-import com.java27.blog.dto.CommentDTO;
+import com.java27.blog.dto.InputCommentDTO;
 import com.java27.blog.dto.CreatePostDTO;
 import com.java27.blog.dto.PostDTO;
 import com.java27.blog.service.PostService;
@@ -22,7 +22,7 @@ public class PostController {
     }
 
     @PostMapping("/post/{post_id}/comment/")
-    public ResponseEntity<?> addCommentToPost(@RequestBody CommentDTO commentDTO){
-        return ResponseEntity.ok(postService.addCommentToPost(commentDTO));
+    public ResponseEntity <?> addCommentToPost(@AuthenticationPrincipal UserDetails userDetails, @RequestBody InputCommentDTO inputCommentDTO, @RequestParam Long postId) throws Exception{
+        return ResponseEntity.ok(postService.addCommentToPost(inputCommentDTO, userDetails, postId));
     }
 }

@@ -17,5 +17,5 @@ public class PostDTO {
     private String content;
 
     private Instant createAt;
-    private List<CommentDTO> comments;
+    private List<InputCommentDTO> comments;
 }
