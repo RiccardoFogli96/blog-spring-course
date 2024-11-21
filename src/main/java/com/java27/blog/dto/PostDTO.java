@@ -1,5 +1,6 @@
 package com.java27.blog.dto;
 
+import com.java27.blog.model.CommentDTO;
 import lombok.*;
 
 import java.time.Instant;
@@ -17,5 +18,6 @@ public class PostDTO {
     private String content;
 
     private Instant createAt;
-    private List<InputCommentDTO> comments;
+
+    private List<CommentDTO> comments;
 }
